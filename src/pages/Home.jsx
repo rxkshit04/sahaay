@@ -1,8 +1,42 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import logo from "../assets/logo.jpg";
 import "./Home.css";
 
 export default function Home() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      q: "How does yoga help with anxiety?",
+      a: "Yoga combines breathing exercises and mindfulness, which calm the nervous system and reduce stress hormones.",
+    },
+    {
+      q: "Can yoga help with depression?",
+      a: "Regular yoga practice boosts mood-regulating neurotransmitters like serotonin and helps build a positive outlook.",
+    },
+    {
+      q: "Is yoga good for focus and concentration?",
+      a: "Yes, yoga improves concentration and memory by reducing mental clutter and enhancing blood flow to the brain.",
+    },
+    {
+      q: "Can yoga improve sleep?",
+      a: "Gentle yoga before bed reduces restlessness, helping you fall asleep faster and enjoy deeper sleep.",
+    },
+    {
+      q: "How does yoga affect overall mental health?",
+      a: "Yoga balances body and mind, reduces stress, improves resilience, and encourages self-awareness.",
+    },
+    {
+      q: "Do beginners benefit from yoga too?",
+      a: "Absolutely! Even simple breathing and stretching practices help beginners feel calmer and more in control.",
+    },
+  ];
+
   return (
     <div className="home">
       {/* Hero Section */}
@@ -34,7 +68,6 @@ export default function Home() {
       <section className="features">
         <h2>Everything You Need for Mental Wellness</h2>
 
-        {/* First Row */}
         <div className="features-row">
           <div className="feature-card">
             <i className="fas fa-robot"></i>
@@ -53,7 +86,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Second Row */}
         <div className="features-row">
           <div className="feature-card">
             <i className="fas fa-users"></i>
@@ -96,6 +128,29 @@ export default function Home() {
           <span>• 100% confidential</span>
           <span>• Available 24/7</span>
           <span>• No judgment zone</span>
+        </div>
+      </section>
+
+      {/* Yoga & Mental Health FAQ Section */}
+      <section className="faq">
+        <h2>🧘‍♀️ Yoga & Mental Health</h2>
+        <p className="subtitle">
+          Discover how yoga can help overcome stress, anxiety, depression, and more.
+        </p>
+
+        <div className="faq-list">
+          {faqs.map((item, index) => (
+            <div
+              key={index}
+              className={`faq-item ${openIndex === index ? "open" : ""}`}
+              onClick={() => toggleFAQ(index)}
+            >
+              <div className="faq-question">{item.q}</div>
+              {openIndex === index && (
+                <div className="faq-answer">{item.a}</div>
+              )}
+            </div>
+          ))}
         </div>
       </section>
     </div>
