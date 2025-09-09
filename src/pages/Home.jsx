@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import "./Home.css";
@@ -10,7 +9,7 @@ export default function Home() {
       <section className="hero">
         <div className="hero-content">
           <h1>
-            Your Mental Health <span>Matters</span>
+            Your Mental Health <br /> <span>Matters</span>
           </h1>
           <p>
             A safe, confidential space for college students to access mental
@@ -71,6 +70,32 @@ export default function Home() {
             <h3>Progress Tracking</h3>
             <p>Track your wellness journey with insights.</p>
           </div>
+        </div>
+      </section>
+
+      {/* Ready to Prioritize Section */}
+      <section className="prioritize">
+        <p className="tag">Take the First Step Today</p>
+        <h2>
+          Ready to Prioritize Your <span>Mental Health?</span>
+        </h2>
+        <p className="subtitle">
+          Join thousands of students who have found support, community, and
+          healing. Your journey to better mental health starts with a single click.
+        </p>
+        <div className="prioritize-buttons">
+          <Link to="/tests" className="btn-primary">
+            Start Your Journey →
+          </Link>
+          <Link to="/counsellor" className="btn-secondary">
+            Talk to Someone Now
+          </Link>
+        </div>
+        <div className="prioritize-features">
+          <span>• Free for all students</span>
+          <span>• 100% confidential</span>
+          <span>• Available 24/7</span>
+          <span>• No judgment zone</span>
         </div>
       </section>
     </div>
