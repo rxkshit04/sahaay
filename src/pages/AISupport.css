@@ -1,0 +1,297 @@
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+.ai-support {
+  text-align: center;
+  padding: 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Heading */
+.top-heading {
+  margin-bottom: 30px;
+}
+
+.main-heading {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1f2937;
+}
+
+.sub-heading {
+  font-size: 20px;
+  color: #4b5563;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Conversation Box */
+.conversation-box {
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.conversation-box h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.conversation-box p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.start-btn {
+  background: #2563eb;
+  color: white;
+  padding: 14px 28px;
+  font-size: 18px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.start-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Info Boxes */
+.info-boxes {
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.info-box {
+  background: white;
+  padding: 22px;
+  flex: 0 0 280px; /* fixed width instead of stretching full */
+  border-radius: 18px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.info-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.info-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.info-box h3 {
+  font-size: 30px;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+.info-box p {
+  font-size: 15px;
+  color: #4b5563;
+}
+
+/* Chatbot Overlay */
+.chatbot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Chatbot Window */
+.chatbot-window {
+  background: #ffffff;
+  width: 95%;
+  height: 90%;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.chatbot-header {
+  background: #2563eb;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.chatbot-body {
+  flex: 1;
+  padding: 25px;
+  background: #f3f4f6;
+  overflow-y: auto;
+}
+
+/* Preset Questions */
+.preset-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.preset-btn {
+  background: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.preset-btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}
+/* --- Yoga Section --- */
+.yoga-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.yoga-heading {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.yoga-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.yoga-card {
+  background: white;
+  padding: 20px;
+  border-radius: 18px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.yoga-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.yoga-card h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #111827;
+}
+
+.arrow-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Yoga Modal */
+.yoga-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.yoga-window {
+  background: #ffffff;
+  width: 90%;
+  height: 85%;
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  animation: slideUp 0.4s ease;
+}
+
+.yoga-header {
+  background: #2563eb;
+  color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+.yoga-body {
+  padding: 25px;
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
