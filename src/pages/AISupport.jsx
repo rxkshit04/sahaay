@@ -1,140 +1,203 @@
 import React, { useState } from "react";
 import "./AISupport.css";
+import ai1 from "../assets/ai1.jpeg";
+import ai2 from "../assets/ai2.jpg";
+import ai3 from "../assets/ai3.jpg";
+import ai4 from "../assets/ai4.jpeg";
+import ai5 from "../assets/ai5.jpg";
+import ai6 from "../assets/ai6.jpg";
 
 const AISupport = () => {
-  const [isChatOpen, setIsChatOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const [selectedYoga, setSelectedYoga] = useState(null);
 
-  const presetQuestions = [
-    "I'm feeling very anxious. What should I do?",
-    "How can I manage stress better?",
-    "I can't sleep at night, any tips?",
-    "I feel lonely and need advice.",
-    "How do I stay motivated every day?"
+  const predefinedQuestions = [
+    "I feel anxious, what should I do?",
+    "How can I sleep better?",
+    "I’m feeling stressed, any quick tips?",
+    "How to stay motivated every day?",
   ];
 
   const yogaExercises = [
-    {
-      name: "Anulom Vilom",
-      details:
-        "A powerful breathing technique that balances the mind and reduces anxiety.\n\nSteps:\n1. Sit comfortably with a straight back.\n2. Close your right nostril with your thumb and inhale through the left nostril.\n3. Close the left nostril with your ring finger and exhale through the right.\n4. Repeat for 5–10 minutes."
-    },
-    {
-      name: "Shavasana",
-      details:
-        "A relaxation pose that calms the mind and relieves stress.\n\nSteps:\n1. Lie flat on your back.\n2. Keep arms slightly away from the body.\n3. Close your eyes and focus on slow breathing.\n4. Stay relaxed for 5–10 minutes."
-    },
-    {
-      name: "Bhramari Pranayama",
-      details:
-        "A humming bee breath that reduces stress and relaxes the nervous system.\n\nSteps:\n1. Sit comfortably and close your eyes.\n2. Place fingers on your ears.\n3. Inhale deeply, then exhale making a humming sound.\n4. Repeat 5–7 times."
-    },
-    {
-      name: "Balasana (Child’s Pose)",
-      details:
-        "A gentle yoga pose to release stress and stretch the back.\n\nSteps:\n1. Kneel down and sit on your heels.\n2. Bend forward and stretch your arms in front.\n3. Rest your forehead on the mat.\n4. Hold for 1–2 minutes."
-    },
-    {
-      name: "Sukhasana (Easy Pose)",
-      details:
-        "A simple cross-legged pose to relax and improve focus.\n\nSteps:\n1. Sit cross-legged with a straight spine.\n2. Rest hands on knees in Gyan Mudra.\n3. Close your eyes and focus on breathing.\n4. Meditate for 5–10 minutes."
-    },
-    {
-      name: "Viparita Karani (Legs-Up-the-Wall)",
-      details:
-        "A restorative pose that relieves tension and calms the mind.\n\nSteps:\n1. Lie down close to a wall.\n2. Lift your legs and rest them against the wall.\n3. Keep arms relaxed at sides.\n4. Stay in this position for 5–10 minutes."
-    }
+    { img: ai1, title: "Yoga 1", desc: "Helps calm your mind and reduce stress." },
+    { img: ai2, title: "Yoga 2", desc: "Improves breathing and focus." },
+    { img: ai3, title: "Yoga 3", desc: "Relaxes body and enhances flexibility." },
+    { img: ai4, title: "Yoga 4", desc: "Boosts energy and improves posture." },
+    { img: ai5, title: "Yoga 5", desc: "Helps improve mindfulness and sleep." },
+    { img: ai6, title: "Yoga 6", desc: "Relieves anxiety and promotes relaxation." },
   ];
 
+  const handleSend = async (text) => {
+    if (!text.trim()) return;
+
+    const newMessage = { sender: "user", text };
+    setMessages((prev) => [...prev, newMessage]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+  "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" +
+    import.meta.env.VITE_GEMINI_API_KEY,
+  {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      contents: [{ role: "user", parts: [{ text }] }],
+    }),
+  }
+);
+
+const data = await response.json();
+console.log("Gemini raw response:", data);
+
+let botText = "Sorry, I couldn't understand that.";
+if (
+  data?.candidates &&
+  data.candidates[0]?.content &&
+  data.candidates[0].content.parts &&
+  data.candidates[0].content.parts[0]?.text
+) {
+  botText = data.candidates[0].content.parts[0].text;
+}
+
+
+
+
+      setMessages((prev) => [...prev, { sender: "bot", text: botText }]);
+    } catch (err) {
+      setMessages((prev) => [
+        ...prev,
+        { sender: "bot", text: "Error connecting to AI service." },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSend(input);
+  };
+
   return (
-    <div className="ai-support">
-      {/* Heading */}
-      <div className="top-heading">
-        <h1 className="main-heading">AI Mental Health Support</h1>
-        <p className="sub-heading">
-          Get immediate support from our compassionate AI assistant, available
-          24/7 to help you through difficult moments.
+    <div className="ai-support-page">
+      <div className="top-header">
+        <h1>AI Mental Health Support</h1>
+        <p>
+          A safe, confidential space to talk, get guidance, and feel supported
+          anytime you need.
         </p>
       </div>
 
-      {/* Start Conversation Box */}
-      <div className="conversation-box">
-        <h2>Start Your Conversation</h2>
-        <p>Our AI assistant is here to listen and help. Click below to begin.</p>
-        <button className="start-btn" onClick={() => setIsChatOpen(true)}>
-          Start Chat with AI Assistant
+      <div className="conversation-section">
+        <button className="start-btn" onClick={() => setChatOpen(true)}>
+          Start Your Conversation
         </button>
       </div>
 
-      {/* Info Boxes */}
-      <div className="info-boxes">
+      <div className="info-container">
         <div className="info-box">
           <span className="info-icon">💬</span>
           <h3>Instant Support</h3>
-          <p>Get help immediately, anytime you need it</p>
+          <p>Get help immediately, anytime you need it.</p>
         </div>
         <div className="info-box">
           <span className="info-icon">🔒</span>
           <h3>Complete Privacy</h3>
-          <p>Your conversations are confidential and secure</p>
+          <p>Your conversations are confidential and secure.</p>
         </div>
         <div className="info-box">
           <span className="info-icon">⏰</span>
           <h3>24/7 Available</h3>
-          <p>Support when you need it most</p>
+          <p>Support when you need it most.</p>
         </div>
       </div>
 
-      {/* Chatbot Window */}
-      {isChatOpen && (
-        <div className="chatbot-overlay">
-          <div className="chatbot-window">
-            <div className="chatbot-header">
-              <h2>AI Assistant</h2>
-              <button onClick={() => setIsChatOpen(false)}>✖</button>
+      <div className="yoga-section">
+        <h2>Yoga to Relax Your Mind</h2>
+        <div className="yoga-grid">
+          {yogaExercises.map((yoga, i) => (
+            <div key={i} className="yoga-card">
+              <img src={yoga.img} alt={yoga.title} />
+              <div className="yoga-info">
+                <h3>{yoga.title}</h3>
+                <button
+                  className="arrow-btn"
+                  onClick={() => setSelectedYoga(yoga)}
+                >
+                  ➔
+                </button>
+              </div>
             </div>
-            <div className="chatbot-body">
-              <div className="preset-questions">
-                {presetQuestions.map((q, index) => (
-                  <button key={index} className="preset-btn">
-                    {q}
-                  </button>
-                ))}
+          ))}
+        </div>
+      </div>
+
+      {/* -------- YOGA MODAL -------- */}
+      {selectedYoga && (
+        <div className="yoga-modal">
+          <div className="modal-content">
+            <button className="close-btn" onClick={() => setSelectedYoga(null)}>
+              ✖
+            </button>
+            <div className="yoga-detail-content">
+              <img src={selectedYoga.img} alt={selectedYoga.title} />
+              <div>
+                <h2>{selectedYoga.title}</h2>
+                <p>{selectedYoga.desc}</p>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* Yoga Section */}
-      <div className="yoga-section">
-        <h2 className="yoga-heading">🧘 Yoga to Relax Your Mind</h2>
-        <div className="yoga-grid">
-          {yogaExercises.map((yoga, index) => (
-            <div key={index} className="yoga-card">
-              <h3>{yoga.name}</h3>
-              <button
-                className="arrow-btn"
-                onClick={() => setSelectedYoga(yoga)}
-              >
-                ➡
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* -------- CHAT MODAL -------- */}
+      {chatOpen && (
+        <div className="chat-modal">
+          <div className="chat-window">
+            <button className="close-btn" onClick={() => setChatOpen(false)}>
+              ✖
+            </button>
+            <h2>AI Chat Support</h2>
 
-      {/* Yoga Modal */}
-      {selectedYoga && (
-        <div className="yoga-overlay">
-          <div className="yoga-window">
-            <div className="yoga-header">
-              <h2>{selectedYoga.name}</h2>
-              <button onClick={() => setSelectedYoga(null)}>✖</button>
+            <div className="chat-messages">
+              {messages.map((msg, idx) => (
+                <div
+                  key={idx}
+                  className={msg.sender === "user" ? "user-msg" : "bot-msg"}
+                >
+                  {msg.text}
+                </div>
+              ))}
+              {loading && <div className="bot-msg">🤖 Typing...</div>}
             </div>
-            <div className="yoga-body">
-              <pre>{selectedYoga.details}</pre>
+
+            {/* Predefined questions */}
+            <div className="predefined-questions">
+              {predefinedQuestions.map((q, idx) => (
+                <button key={idx} onClick={() => handleSend(q)}>
+                  {q}
+                </button>
+              ))}
             </div>
+
+            <form className="chat-form" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                className="chat-input"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your message..."
+              />
+              <button type="submit" className="send-btn">
+                Send
+              </button>
+            </form>
           </div>
         </div>
       )}

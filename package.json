@@ -12,6 +12,7 @@
   "dependencies": {
     "@dataconnect/generated": "file:src/dataconnect-generated",
     "@fortawesome/fontawesome-free": "^7.0.1",
+    "@google/generative-ai": "^0.24.1",
     "aos": "^2.3.4",
     "axios": "^1.11.0",
     "dotenv": "^17.2.2",
