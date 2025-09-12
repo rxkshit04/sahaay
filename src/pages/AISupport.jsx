@@ -22,14 +22,39 @@ const AISupport = () => {
     "How to stay motivated every day?",
   ];
 
-  const yogaExercises = [
-    { img: ai1, title: "Yoga 1", desc: "Helps calm your mind and reduce stress." },
-    { img: ai2, title: "Yoga 2", desc: "Improves breathing and focus." },
-    { img: ai3, title: "Yoga 3", desc: "Relaxes body and enhances flexibility." },
-    { img: ai4, title: "Yoga 4", desc: "Boosts energy and improves posture." },
-    { img: ai5, title: "Yoga 5", desc: "Helps improve mindfulness and sleep." },
-    { img: ai6, title: "Yoga 6", desc: "Relieves anxiety and promotes relaxation." },
-  ];
+const yogaExercises = [
+  {
+    img: ai1,
+    title: "Anulom Vilom",
+    desc: "Anulom Vilom is a breathing exercise where you inhale through one nostril and exhale through the other, using your fingers to alternate sides. It helps calm the mind, improve focus, balance the nervous system, and increase lung capacity."
+  },
+  {
+    img: ai2,
+    title: "Shavasana",
+    desc: "Shavasana is done by lying flat on your back with legs apart, arms relaxed by your sides, palms facing upward, and eyes closed. It helps reduce stress, relax the body, lower blood pressure, and restore energy."
+  },
+  {
+    img: ai3,
+    title: "Bhramari",
+    desc: "Bhramari involves closing the ears with fingers and making a humming sound while exhaling. It calms the mind, reduces stress and anxiety, and improves concentration. Alternatively, this pose can be used for general relaxation or breathing focus."
+  },
+  {
+    img: ai4,
+    title: "Balasana",
+    desc: "Balasana is performed by kneeling on the floor with big toes touching and knees apart, sitting back on the heels, bending forward to rest the torso between the thighs, stretching the arms forward or placing them alongside the body, and resting the forehead on the floor while breathing deeply. It helps relieve stress and fatigue, gently stretches the hips, thighs, and ankles, calms the mind, eases back and neck pain, improves digestion, and enhances blood circulation."
+  },
+  {
+    img: ai5,
+    title: "Sukhasana",
+    desc: "Sukhasana is done by sitting on the floor with legs crossed, keeping the spine straight, hands resting on the knees or in a mudra, shoulders relaxed, and eyes closed while breathing calmly and evenly. It promotes mental calmness, improves posture, enhances focus and concentration, stretches the hips and spine, reduces anxiety, and is ideal for meditation and breathing exercises."
+  },
+  {
+    img: ai6,
+    title: "Viparita Karani",
+    desc: "Viparita Karani is done by lying on your back with your legs extended up against a wall, keeping your hips close to the wall, arms relaxed at your sides, and eyes closed while breathing deeply. It helps relieve tired legs and feet, improves blood circulation, reduces stress and anxiety, eases lower back pain, supports lymphatic drainage, and promotes relaxation and better sleep."
+  },
+];
+
 
   const handleSend = async (text) => {
     if (!text.trim()) return;
