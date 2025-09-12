@@ -9,17 +9,18 @@
 .tests-hero {
   text-align: center;
   margin-top: 5rem; /* pushes below navbar */
+  margin-bottom: 2.5rem;
 }
 
 .tests-hero h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
   color: #1f2937;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tests-hero p {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: #4b5563;
   max-width: 650px;
   margin: 0 auto;
@@ -96,6 +97,7 @@
   border-radius: 1rem;
   text-align: center;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .tests-support {
@@ -119,69 +121,116 @@
   font-size: 0.95rem;
   cursor: pointer;
 }
+.back-btn {
+  margin-top: 1rem;
+  background: #f3f4f6;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #e5e7eb;
+}
+
 
 .counsellor-btn:hover {
   background: #2563eb;
 }
 
-/* Modal */
-.test-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 50;
-}
-
-.test-modal {
+/* In-place Test Section */
+.test-section {
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  width: 90%;
-  max-width: 650px;
-  max-height: 90vh;
-  overflow-y: auto;
-  position: relative;
-  animation: slideUp 0.3s ease;
+  margin-top: 2rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
 }
 
-.close-btn {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
+.test-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.test-section p {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+/* Table-like layout */
+.test-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.question-header {
+  font-weight: bold;
+  text-align: left;
+}
+
+.option-header {
+  font-weight: bold;
+}
+
+.question {
+  text-align: left;
+}
+
+/* Result Block */
+.result-block {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.result-block h3 {
+  color: #065f46;
   font-size: 1.2rem;
-  cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
+/* Buttons */
 .submit-btn {
-  margin-top: 1.5rem;
-  background: #3b82f6;
+  display: block;
+  margin: 0 auto;
+  background: #10b981;
   color: white;
   border: none;
-  padding: 0.7rem 1.2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
   border-radius: 0.5rem;
   cursor: pointer;
 }
 
-.submit-btn:hover {
-  background: #2563eb;
+.submit-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
 }
 
-/* Animation */
-@keyframes slideUp {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.submit-btn:hover:not(:disabled) {
+  background: #059669;
 }
