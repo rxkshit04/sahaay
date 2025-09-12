@@ -1,0 +1,187 @@
+/* General */
+.tests-page {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  background: #f9fafb;
+}
+
+/* Hero */
+.tests-hero {
+  text-align: center;
+  margin-top: 5rem; /* pushes below navbar */
+}
+
+.tests-hero h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.tests-hero p {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.tests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.test-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+}
+
+.test-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.test-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.test-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.test-card .description {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1rem;
+}
+
+.test-card .meta {
+  display: flex;
+  gap: 1.2rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 1.2rem;
+}
+
+.test-card button {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.test-card button:hover {
+  background: #2563eb;
+}
+
+/* Info */
+.tests-info,
+.tests-support {
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tests-support {
+  background: #eef2ff;
+}
+
+.tests-info h3,
+.tests-support h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.counsellor-btn {
+  margin-top: 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.counsellor-btn:hover {
+  background: #2563eb;
+}
+
+/* Modal */
+.test-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.test-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.submit-btn {
+  margin-top: 1.5rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #2563eb;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
