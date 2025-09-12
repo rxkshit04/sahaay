@@ -94,7 +94,7 @@ if (
 
 
       setMessages((prev) => [...prev, { sender: "bot", text: botText }]);
-    } catch (err) {
+    } catch {
       setMessages((prev) => [
         ...prev,
         { sender: "bot", text: "Error connecting to AI service." },
