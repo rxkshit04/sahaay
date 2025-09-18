@@ -1,0 +1,142 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  height: 89vh;
+}
+
+.side-left {
+  flex: 1;
+  background: linear-gradient(135deg, #2164f4df  , #72b8ee);;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  
+}
+
+.side-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(244, 241, 241);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 380px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.form-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-box label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.form-box input {
+  display: block;
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.form-box input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 6px rgba(4, 50, 255, 0.5);
+}
+
+.form-box button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 7px;
+}
+.tnc {
+  gap: 8px; 
+  font-size: 14px;
+  color: #555;
+}
+
+.tnc a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.tnc a:hover {
+  text-decoration: underline;
+}
+
+.form-box button:hover {
+  background-color: #1a4fc2;
+  box-shadow: 0px 0px 13px rgba(5, 79, 238, 0.6);
+}
+
+.form-box p {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.form-box a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-box a:hover {
+  text-decoration: underline;
+}
+
+.graphic img {
+  height: 380px;
+  width: 380px;
+}
+#google{
+    height: 22px;
+    width: 22px;
+}
+#googlebtn{
+    background-color: #fff;
+    color: black;
+}
+#googlebtn:hover{
+    box-shadow: 0 0 0 0;
+    background-color: #ddd;
+}
+#check{
+    display: inline-flex;
+    
+}

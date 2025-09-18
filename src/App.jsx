@@ -6,6 +6,8 @@ import AISupport from "./pages/AISupport";
 import TalkToCounsellor from "./pages/TalkToCounsellor";
 import Tests from "./pages/Tests";
 import Resources from "./pages/Resources";
+import Signup from "./pages/Signup";
+
 
 export default function App() {
   return (
@@ -18,6 +20,7 @@ export default function App() {
         <Route path="/counsellor" element={<TalkToCounsellor />} />
         <Route path="/tests" element={<Tests />} />
         <Route path="/resources" element={<Resources />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </div>
   );
