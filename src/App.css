@@ -1,3 +1,4 @@
+/* Modified app.css */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -39,4 +40,17 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #e53e3e;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+.logout-btn:hover {
+  color: #c53030;
 }
