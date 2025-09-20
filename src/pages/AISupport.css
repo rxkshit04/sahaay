@@ -1,0 +1,319 @@
+/* General font + reset */
+body, h1, h2, h3, p, button {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ai-support-page {
+  background: #f9fafb;
+  color: #111827;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* ---------------- TOP HEADER ---------------- */
+.top-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
+.top-header h1 {
+  font-size: 36px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.top-header p {
+  font-size: 18px;
+  color: #374151;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------------- START CONVERSATION BUTTON ---------------- */
+.conversation-section {
+  text-align: center;
+  margin: 30px 0;
+}
+.start-btn {
+  background: #4f46e5;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+.start-btn:hover {
+  background: #4338ca;
+  transform: scale(1.05);
+}
+
+/* ---------------- INFO BOXES ---------------- */
+.info-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+.info-box {
+  flex: 1;
+  max-width: 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.info-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+.info-icon {
+  font-size: 26px;
+  display: inline-block;
+  margin-right: 8px;
+}
+.info-box h3 {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+.info-box p {
+  font-size: 16px;
+  color: #4b5563;
+}
+
+/* ---------------- YOGA SECTION ---------------- */
+.yoga-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+.yoga-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+.yoga-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+.yoga-card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+}
+.yoga-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.yoga-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.yoga-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
+.yoga-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.arrow-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.arrow-btn:hover {
+  background: #4338ca;
+  transform: rotate(20deg);
+}
+
+/* ---------------- YOGA MODAL ---------------- */
+.yoga-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 800px;
+  width: 90%;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+.yoga-detail-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.yoga-detail-content img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.yoga-detail-content h2 {
+  margin-top: 0;
+  font-size: 26px;
+}
+.yoga-detail-content p {
+  font-size: 18px;
+  color: #374151;
+}
+
+/* ---------------- CHAT MODAL ---------------- */
+.chat-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.chat-window {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.4s ease;
+  position: relative;
+}
+.chat-window h2 {
+  margin: 0 0 15px;
+  text-align: center;
+}
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding-right: 6px;
+  max-height: 300px;
+}
+.bot-msg {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  max-width: 80%;
+}
+.user-msg {
+  background: #d1fae5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  text-align: right;
+  margin-left: auto;
+  max-width: 80%;
+}
+.chat-form {
+  display: flex;
+}
+.chat-input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+.send-btn {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin-left: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.send-btn:hover {
+  background: #4338ca;
+}
+
+/* Sticky close button inside chat window */
+.chat-window .close-btn {
+  position: sticky;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: #f3f4f6;
+  font-size: 22px;
+  border: none;
+  border-radius: 50%;
+  padding: 6px 10px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+.chat-window .close-btn:hover {
+  background: #e5e7eb;
+  transform: rotate(90deg);
+}
+
+/* ---------------- PREDEFINED QUESTIONS ---------------- */
+.predefined-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 15px;
+}
+.predefined-questions button {
+  background: #eef2ff;
+  color: #3730a3;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.predefined-questions button:hover {
+  background: #4338ca;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

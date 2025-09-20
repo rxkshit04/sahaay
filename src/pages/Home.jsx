@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import logo from "../assets/logo.jpg";
 import "./Home.css";
 
@@ -9,6 +11,14 @@ export default function Home() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   const faqs = [
     {
@@ -40,7 +50,7 @@ export default function Home() {
   return (
     <div className="home">
       {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" data-aos="fade-up">
         <div className="hero-content">
           <h1>
             Your Mental Health <br /> <span>Matters</span>
@@ -65,48 +75,74 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="features">
+      <section className="features" data-aos="fade-up">
         <h2>Everything You Need for Mental Wellness</h2>
 
         <div className="features-row">
-          <div className="feature-card">
-            <i className="fas fa-robot"></i>
-            <h3>AI-Powered Support</h3>
-            <p>Instant help with our compassionate AI chatbot.</p>
-          </div>
-          <div className="feature-card">
-            <i className="fas fa-user-shield"></i>
-            <h3>Confidential Appointments</h3>
-            <p>Book secure sessions with counselors.</p>
-          </div>
-          <div className="feature-card">
-            <i className="fas fa-book"></i>
-            <h3>Resource Library</h3>
-            <p>Curated articles, guides, and meditation tools.</p>
-          </div>
+          {[
+            {
+              icon: "fas fa-robot",
+              title: "AI-Powered Support",
+              desc: "Instant help with our compassionate AI chatbot.",
+            },
+            {
+              icon: "fas fa-user-shield",
+              title: "Confidential Appointments",
+              desc: "Book secure sessions with counselors.",
+            },
+            {
+              icon: "fas fa-book",
+              title: "Resource Library",
+              desc: "Curated articles, guides, and meditation tools.",
+            },
+          ].map((item, idx) => (
+            <div
+              className="feature-card"
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={100 * idx}
+            >
+              <i className={item.icon}></i>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
 
         <div className="features-row">
-          <div className="feature-card">
-            <i className="fas fa-users"></i>
-            <h3>Peer Support Community</h3>
-            <p>Connect with fellow students in moderated forums.</p>
-          </div>
-          <div className="feature-card">
-            <i className="fas fa-lock"></i>
-            <h3>Complete Privacy</h3>
-            <p>End-to-end encrypted and anonymous participation.</p>
-          </div>
-          <div className="feature-card">
-            <i className="fas fa-chart-line"></i>
-            <h3>Progress Tracking</h3>
-            <p>Track your wellness journey with insights.</p>
-          </div>
+          {[
+            {
+              icon: "fas fa-users",
+              title: "Peer Support Community",
+              desc: "Connect with fellow students in moderated forums.",
+            },
+            {
+              icon: "fas fa-lock",
+              title: "Complete Privacy",
+              desc: "End-to-end encrypted and anonymous participation.",
+            },
+            {
+              icon: "fas fa-chart-line",
+              title: "Progress Tracking",
+              desc: "Track your wellness journey with insights.",
+            },
+          ].map((item, idx) => (
+            <div
+              className="feature-card"
+              key={idx}
+              data-aos="fade-up"
+              data-aos-delay={100 * (idx + 3)}
+            >
+              <i className={item.icon}></i>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Ready to Prioritize Section */}
-      <section className="prioritize">
+      {/* Prioritize Section */}
+      <section className="prioritize" data-aos="fade-up">
         <p className="tag">Take the First Step Today</p>
         <h2>
           Ready to Prioritize Your <span>Mental Health?</span>
@@ -131,8 +167,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Yoga & Mental Health FAQ Section */}
-      <section className="faq">
+      {/* FAQ Section */}
+      <section className="faq" data-aos="fade-up">
         <h2>🧘‍♀️ Yoga & Mental Health</h2>
         <p className="subtitle">
           Discover how yoga can help overcome stress, anxiety, depression, and more.
@@ -144,6 +180,8 @@ export default function Home() {
               key={index}
               className={`faq-item ${openIndex === index ? "open" : ""}`}
               onClick={() => toggleFAQ(index)}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               <div className="faq-question">{item.q}</div>
               {openIndex === index && (
