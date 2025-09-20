@@ -6,6 +6,7 @@ import AISupport from "./pages/AISupport";
 import TalkToCounsellor from "./pages/TalkToCounsellor";
 import Tests from "./pages/Tests";
 import Resources from "./pages/Resources";
+import Signup from "./pages/Signup";
 
 export default function App() {
   const location = useLocation();
@@ -39,6 +40,7 @@ export default function App() {
             <Link to="/tests" className="nav-link">Tests</Link>
             <Link to="/resources" className="nav-link">Resources</Link>
             <Link to="/login" className="nav-link">Login</Link>
+            <Link to="/signup" className="nav-link">Signup</Link> {/* Added safely */}
           </nav>
         </div>
       </header>
@@ -47,6 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} /> {/* Added safely */}
           <Route path="/ai" element={<AISupport />} />
           <Route path="/counsellor" element={<TalkToCounsellor />} />
           <Route path="/tests" element={<Tests />} />
