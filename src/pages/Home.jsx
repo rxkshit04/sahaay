@@ -168,7 +168,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="faq" data-aos="fade-up">
+      <section className="faq">
         <h2>🧘‍♀️ Yoga & Mental Health</h2>
         <p className="subtitle">
           Discover how yoga can help overcome stress, anxiety, depression, and more.
@@ -179,11 +179,10 @@ export default function Home() {
             <div
               key={index}
               className={`faq-item ${openIndex === index ? "open" : ""}`}
-              onClick={() => toggleFAQ(index)}
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
             >
-              <div className="faq-question">{item.q}</div>
+              <div className="faq-question" onClick={() => toggleFAQ(index)}>
+                {item.q}
+              </div>
               {openIndex === index && (
                 <div className="faq-answer">{item.a}</div>
               )}
