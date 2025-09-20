@@ -40,7 +40,7 @@ export default function App() {
             <Link to="/tests" className="nav-link">Tests</Link>
             <Link to="/resources" className="nav-link">Resources</Link>
             <Link to="/login" className="nav-link">Login</Link>
-            <Link to="/signup" className="nav-link">Signup</Link> {/* Added safely */}
+            <Link to="/signup" className="nav-link">Signup</Link>
           </nav>
         </div>
       </header>
@@ -49,7 +49,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> {/* Added safely */}
+          <Route path="/signup" element={<Signup />} />
           <Route path="/ai" element={<AISupport />} />
           <Route path="/counsellor" element={<TalkToCounsellor />} />
           <Route path="/tests" element={<Tests />} />

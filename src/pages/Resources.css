@@ -1,0 +1,205 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* body img {
+  user-select: none;
+} */
+
+.Resource_container h1,h2,h3,h4,h5,h6 {
+  color: #344256;
+
+}
+
+.Resource_container{
+    animation: jumpIn 0.6s ease-out;
+}
+.Resource_container p {
+  color: #7588A3;
+}
+
+
+#upper h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: #344256;
+}
+#upper p {
+  color: #7588A3;
+  text-align: center;
+  margin: 16px 42px 0px;
+  font-size: 18px;
+}
+.Resources_card_main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.Resource_cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;  
+  margin: 25px 0 40px;
+  gap: 20px;
+  transition: all 0.2s ease-in;
+}
+
+.Resource_cards div {
+  border-radius: 19px;
+  padding: 24px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.Resource_cards div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5px 2.5px rgba(0,0,0,0.15);
+}
+.Resource_cards div:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+.Resource_cards div h3 {
+  margin: 6px 0 0 0;
+  color: #344256;
+}
+.Resource_cards div p {
+  color: #7588A3;
+  font-size: 14px;
+  margin: 6px 0 0 0;
+}
+
+
+#Resource_card1,
+#card3 {
+  height: 268px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.Resource_cards div img {
+  height: 48px;
+  width: 48px;
+  border-radius: 10px;
+}
+
+.Resource_cards img {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+#clock {
+  height: 20px;
+  width: 20px;
+}
+
+
+.Resource_cards div span {
+  margin-top: auto; 
+}
+.Resource_cards div span p {
+  font-size: 0.8rem;
+  color: #2563eb;
+  font-weight: bold;
+
+}
+#dot {
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    margin-top: 3px;
+
+}
+#sub_para{
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+
+
+.help-container {
+ background-color: #fff;
+border-radius: 12px;
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+width: 672px;
+height:236px ;
+padding: 40px;
+text-align: center;
+border: 1px solid #e2e8f0; 
+margin-bottom: 400px
+}
+
+.help-container h1 {
+font-size: 28px;
+font-weight: bold;
+color: #333;
+margin-bottom: 16px;
+margin-top: -10px;
+}
+
+.help-container p {
+color: #666;
+font-size: 16px;
+margin-bottom: 24px;
+line-height: 1.5;
+}
+
+.resource-links {
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.resource-links a {
+color: #5d90e1; 
+font-size: 14px;
+text-decoration: none;
+transition: color 0.2s ease-in-out;
+}
+.help-section{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.Resource_cards{
+      animation: jumpIns 0.6s ease-out;
+}
+
+@keyframes jumpIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes jumpIns {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
