@@ -1,4 +1,3 @@
-// App.jsx remains unchanged
 import { useState, useEffect } from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "./services/firebase";
@@ -64,12 +63,13 @@ export default function App() {
             <Link to="/counsellor" className="nav-link">Counsellor</Link>
             <Link to="/tests" className="nav-link">Tests</Link>
             <Link to="/resources" className="nav-link">Resources</Link>
+
             {user ? (
               <button className="nav-link logout-btn" onClick={handleLogout}>
                 Logout
               </button>
             ) : (
-              <Link to="/auth" className="nav-link">Login</Link>
+              <Link to="/auth" className="nav-link">Login / Signup</Link>
             )}
           </nav>
         </div>
