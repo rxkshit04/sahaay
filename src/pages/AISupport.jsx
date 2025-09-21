@@ -62,7 +62,6 @@ You are a helpful AI health assistant. Provide trusted general advice, but recom
     },
   ];
 
-  // ---------------- SEND MESSAGE ----------------
   const handleSend = async (text) => {
     if (!text.trim()) return;
 
@@ -172,7 +171,7 @@ You are a helpful AI health assistant. Provide trusted general advice, but recom
       </div>
 
       <div className="yoga-section">
-        <h2>Yoga to Relax Your Mind</h2>
+        <h2>Yoga to Relax Your Mind 🧘🏻‍♂️</h2>
         <div className="yoga-grid">
           {yogaExercises.map((yoga, i) => (
             <div key={i} className="yoga-card">

@@ -2,27 +2,15 @@ import "./TalkToCounsellor.css";
 
 const TalkToCounsellor = () => {
   const mentors = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Licensed Clinical Psychologist",
-      specialization: "Specializes in anxiety and depression",
-      availability: "Mon-Fri 9AM-5PM",
-      img: "/1.png",
-    },
+    
     {
       name: "Dr. Amit Sharma",
       role: "Career Counselor",
       specialization: "Guidance for students",
       availability: "Mon-Sat 10AM-6PM",
-      img: "/2.png",
+      img: "/5.png",
     },
-    {
-      name: "Dr. Emily Brown",
-      role: "Child Psychologist",
-      specialization: "Child behavior and development",
-      availability: "Tue-Sat 11AM-7PM",
-      img: "/3.png",
-    },
+  
     {
       name: "Dr. Priya Sharma",
       role: "Trauma & Crisis Counsellor",
@@ -30,34 +18,7 @@ const TalkToCounsellor = () => {
       availability: "Fri-Mon 10AM-5PM",
       img: "/4.png",
     },
-    {
-      name: "Dr. Priya Sharma",
-      role: "Trauma & Crisis Counsellor",
-      specialization: "Crisis intervention and trauma therapy",
-      availability: "Fri-Mon 10AM-5PM",
-      img: "/5.png",
-    },
-    {
-      name: "Dr. Priya Sharma",
-      role: "Trauma & Crisis Counsellor",
-      specialization: "Crisis intervention and trauma therapy",
-      availability: "Fri-Mon 10AM-5PM",
-      img: "/6.png",
-    },
-    {
-      name: "Dr. Priya Sharma",
-      role: "Trauma & Crisis Counsellor",
-      specialization: "Crisis intervention and trauma therapy",
-      availability: "Fri-Mon 10AM-5PM",
-      img: "/7.png",
-    },
-    {
-      name: "Dr. Priya Sharma",
-      role: "Trauma & Crisis Counsellor",
-      specialization: "Crisis intervention and trauma therapy",
-      availability: "Fri-Mon 10AM-5PM",
-      img: "/8.png",
-    },
+    
   ];
 
   return (
@@ -151,9 +112,9 @@ const TalkToCounsellor = () => {
               <h3>Campus Locations</h3>
             </div>
             <div id="loc_subdetail">
-              <p>Student Health Center - Location...</p>
-              <p>Counseling Services - Location...</p>
-              <p>Wellness Center - Location...</p>
+              <p>Student Health Center - C-Block, MAIT Campus</p>
+              <p>Counseling Services - D-Block, MAIT Campus</p>
+              <p>Wellness Center - Rohini, Sec-22</p>
             </div>
           </div>
           <div id="location">
@@ -163,9 +124,9 @@ const TalkToCounsellor = () => {
                 <h3>Contact Information</h3>
               </div>
               <div id="loc_subdetail">
-                <p>Emergency: 911</p>
-                <p>Crisis Line: 988</p>
-                <p>Campus Counseling: (555) 123-4567</p>
+                <p>Emergency: 112</p>
+                <p>Suicide Helpline: 9152987821 </p>
+                <p>Campus Counseling: 0120-111-2121</p>
               </div>
             </div>
           </div>

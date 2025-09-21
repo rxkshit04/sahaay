@@ -3,9 +3,8 @@ import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom"
 import { auth } from "./services/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 
-// Import pages
 import Home from "./pages/Home";
-import Auth from "./pages/Auth"; 
+import Auth from "./pages/Auth";
 import AISupport from "./pages/AISupport";
 import TalkToCounsellor from "./pages/TalkToCounsellor";
 import Tests from "./pages/Tests";
@@ -16,7 +15,6 @@ export default function App() {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
 
-  // Auth state listener
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -45,19 +43,24 @@ export default function App() {
 
   return (
     <div>
-      {/* 🔹 Header */}
+      {/* Header */}
       <header className="site-header" role="banner">
         <div className="header-inner">
-          <button
-            type="button"
-            className="brand-btn"
+          <Link
+            to="/"
+            className="brand"
             onClick={handleBrandClick}
             aria-label="Go to Sahaay home"
           >
-            Sahaay
-          </button>
+            <img
+              src="/src/assets/main.png"
+              alt="Sahaay logo"
+              className="brand-logo"
+            />
+            <span className="brand-text">Sahaay</span>
+          </Link>
 
-          {/* 🔹 Navbar */}
+          {/* Navbar */}
           <nav className="main-nav" role="navigation" aria-label="Main navigation">
             <Link to="/ai" className="nav-link">AI Support</Link>
             <Link to="/counsellor" className="nav-link">Counsellor</Link>
@@ -69,17 +72,17 @@ export default function App() {
                 Logout
               </button>
             ) : (
-              <Link to="/auth" className="nav-link">Login / Signup</Link>
+              <Link to="/auth" className="nav-link">Login</Link>
             )}
           </nav>
         </div>
       </header>
 
-      {/* 🔹 Routes */}
+      {/* Routes */}
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/auth" element={<Auth />} /> 
+          <Route path="/auth" element={<Auth />} />
           <Route path="/ai" element={<AISupport />} />
           <Route path="/counsellor" element={<TalkToCounsellor />} />
           <Route path="/tests" element={<Tests />} />

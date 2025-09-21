@@ -68,7 +68,6 @@ app.post("/profile", verifyToken, async (req, res) => {
   }
 });
 
-// 🔹 Health check
 app.get("/", (req, res) => res.send("API is running ✅"));
 
 const PORT = process.env.PORT || 5000;

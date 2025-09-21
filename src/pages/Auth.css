@@ -65,7 +65,7 @@
 .auth-box button {
   margin-top: 15px;
   padding: 10px;
-  background: #4f46e5;
+  background: #3f65a1;
   color: #fff;
   border: none;
   border-radius: 0.5rem;
@@ -74,7 +74,7 @@
 }
 
 .auth-box button:hover {
-  background: #4338ca;
+  background: #354f79;
 }
 
 #googlebtn {
@@ -102,7 +102,7 @@
 }
 
 .toggle-link {
-  color: #4f46e5;
+  color: #3f65a1;
   cursor: pointer;
   font-weight: 500;
 }

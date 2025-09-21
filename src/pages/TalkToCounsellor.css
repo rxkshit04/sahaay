@@ -4,10 +4,7 @@ body{
 body img{
     user-select: none;
 }
-/*
-#main_container img{
-    user-select: none;
-} */
+
 #main_container h1,h2,h3,h4,h5,h6{
     color: #344256;
 }
@@ -143,7 +140,6 @@ body img{
   padding: 10px;
 }
 
-/* Mentor Card */
 .mentors .card {
   background: #fff;
   border-radius: 15px;
@@ -200,7 +196,7 @@ body img{
 .connect-btn {
   margin-top: 15px;
   padding: 10px 20px;
-  background: #2563eb;          
+  background: #3f65a1;          
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -212,7 +208,7 @@ body img{
 }
 
 .connect-btn:hover {
-  background: #1d4ed8;          
+  background: #3b537a;          
   transform: translateY(-3px);
   box-shadow: 0 5px 12px rgba(37, 99, 235, 0.4);
 }

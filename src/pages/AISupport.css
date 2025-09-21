@@ -1,4 +1,3 @@
-/* General font + reset */
 body, h1, h2, h3, p, button {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
@@ -14,7 +13,6 @@ body, h1, h2, h3, p, button {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* ---------------- TOP HEADER ---------------- */
 .top-header {
   text-align: center;
   padding: 40px 20px 20px;
@@ -31,13 +29,12 @@ body, h1, h2, h3, p, button {
   margin: 0 auto;
 }
 
-/* ---------------- START CONVERSATION BUTTON ---------------- */
 .conversation-section {
   text-align: center;
   margin: 30px 0;
 }
 .start-btn {
-  background: #4f46e5;
+  background: #3f65a1;
   color: white;
   font-size: 18px;
   padding: 12px 24px;
@@ -47,11 +44,10 @@ body, h1, h2, h3, p, button {
   transition: transform 0.2s ease, background 0.3s ease;
 }
 .start-btn:hover {
-  background: #4338ca;
+  background: #413a87;
   transform: scale(1.05);
 }
 
-/* ---------------- INFO BOXES ---------------- */
 .info-container {
   display: flex;
   justify-content: center;
@@ -87,7 +83,6 @@ body, h1, h2, h3, p, button {
   color: #4b5563;
 }
 
-/* ---------------- YOGA SECTION ---------------- */
 .yoga-section {
   text-align: center;
   padding: 40px 20px;
@@ -131,7 +126,7 @@ body, h1, h2, h3, p, button {
   font-size: 18px;
 }
 .arrow-btn {
-  background: #4f46e5;
+  background: #3f65a1;
   color: white;
   border: none;
   border-radius: 50%;
@@ -146,7 +141,6 @@ body, h1, h2, h3, p, button {
   transform: rotate(20deg);
 }
 
-/* ---------------- YOGA MODAL ---------------- */
 .yoga-modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -187,7 +181,6 @@ body, h1, h2, h3, p, button {
   color: #374151;
 }
 
-/* ---------------- CHAT MODAL ---------------- */
 .chat-modal {
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -259,7 +252,6 @@ body, h1, h2, h3, p, button {
   background: #4338ca;
 }
 
-/* Sticky close button inside chat window */
 .chat-window .close-btn {
   position: sticky;
   top: 0;
@@ -279,7 +271,6 @@ body, h1, h2, h3, p, button {
   transform: rotate(90deg);
 }
 
-/* ---------------- PREDEFINED QUESTIONS ---------------- */
 .predefined-questions {
   display: flex;
   flex-wrap: wrap;
@@ -302,7 +293,6 @@ body, h1, h2, h3, p, button {
   transform: scale(1.05);
 }
 
-/* ---------------- ANIMATIONS ---------------- */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }

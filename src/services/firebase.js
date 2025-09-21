@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-// import { getAuth1 } from "firebase/auth";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getFunctions, httpsCallable } from "firebase/functions";
@@ -16,7 +15,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-// export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const functions = getFunctions(app);
 const auth = getAuth(app);

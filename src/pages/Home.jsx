@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import "./Home.css";
 
 export default function Home() {

@@ -1,4 +1,3 @@
-// Modified Auth.jsx
 import { useState } from "react";
 import { auth, provider, db } from "../services/firebase";
 import {
@@ -7,7 +6,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { useNavigate } from "react-router-dom"; // Added import for navigation
+import { useNavigate } from "react-router-dom"; 
 import "./Auth.css";
 
 const Auth = () => {
@@ -19,26 +18,23 @@ const Auth = () => {
     confirmPassword: "",
   });
 
-  const navigate = useNavigate(); // Added hook for navigation
+  const navigate = useNavigate(); 
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.id]: e.target.value });
 
-  // 🔹 Signup / Login
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       let userCredential;
 
       if (isLogin) {
-        // Login
         userCredential = await signInWithEmailAndPassword(
           auth,
           form.email,
           form.password
         );
       } else {
-        // Signup
         if (form.password !== form.confirmPassword) {
           return alert("Passwords do not match");
         }
@@ -48,7 +44,6 @@ const Auth = () => {
           form.password
         );
 
-        // Store extra data in Firestore (only at first signup)
         await setDoc(doc(db, "users", userCredential.user.uid), {
           fullname: form.fullname,
           email: form.email,
@@ -58,10 +53,9 @@ const Auth = () => {
       }
 
       const user = userCredential.user;
-      const token = await user.getIdToken(); // Firebase JWT
+      const token = await user.getIdToken(); 
       localStorage.setItem("token", token);
 
-      // Removed alert and added redirect
       navigate("/");
     } catch (err) {
       if (err.code === "auth/user-not-found") {
@@ -76,7 +70,6 @@ const Auth = () => {
     }
   };
 
-  // 🔹 Google Auth
   const handleGoogleAuth = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
@@ -84,7 +77,6 @@ const Auth = () => {
       const token = await user.getIdToken();
       localStorage.setItem("token", token);
 
-      // If new Google user, create Firestore doc
       const userDoc = await getDoc(doc(db, "users", user.uid));
       if (!userDoc.exists()) {
         await setDoc(doc(db, "users", user.uid), {
@@ -95,7 +87,6 @@ const Auth = () => {
         });
       }
 
-      // Removed alert and added redirect
       navigate("/");
     } catch (err) {
       alert("Google login failed: " + err.message);
