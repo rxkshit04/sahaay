@@ -1,8 +1,8 @@
+// api/server.js
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import admin from "firebase-admin";
-import serverless from "serverless-http";
 import { createRequire } from "module";
 
 dotenv.config();
@@ -10,6 +10,7 @@ dotenv.config();
 const require = createRequire(import.meta.url);
 const serviceAccount = require("../serviceAccountKey.json");
 
+// Initialize Firebase Admin only once
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -17,12 +18,12 @@ if (!admin.apps.length) {
 }
 
 const db = admin.firestore();
-
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
+// Middleware to verify Firebase token
 const verifyToken = async (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
   if (!token) return res.status(401).json({ error: "No token provided" });
@@ -36,7 +37,8 @@ const verifyToken = async (req, res, next) => {
   }
 };
 
-app.get("/profile", verifyToken, async (req, res) => {
+// Routes
+app.get("/api/server/profile", verifyToken, async (req, res) => {
   try {
     const userRef = db.collection("users").doc(req.user.uid);
     const userDoc = await userRef.get();
@@ -51,7 +53,7 @@ app.get("/profile", verifyToken, async (req, res) => {
   }
 });
 
-app.post("/profile", verifyToken, async (req, res) => {
+app.post("/api/server/profile", verifyToken, async (req, res) => {
   try {
     const userRef = db.collection("users").doc(req.user.uid);
     await userRef.set(
@@ -67,6 +69,8 @@ app.post("/profile", verifyToken, async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => res.send("API is running ✅"));
+app.get("/api/server", (req, res) => {
+  res.send("API is running ✅");
+});
 
-export const handler = serverless(app);
+export default app;
